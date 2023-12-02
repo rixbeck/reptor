@@ -31,18 +31,18 @@ Reptor can be acquired and installed through a Git clone, followed by a Composer
 2. Once Git and Composer are installed, clone Reptor repository into your local environment:
 
     ```bash
-    git clone https://github.com/rixbeck/Reptor.git
+    git clone https://github.com/rixbeck/reptor.git
     ```
    
 3. Navigate to the cloned repository and install the dependencies:
 
     ```bash
-    cd Reptor
+    cd reptor
     composer install
     ```
 
 Make sure your PHP environment meets the requirements specified in the composer.json file, including enabled extensions like PDO, JSON, and SQLite3.
 After completing these steps, the PHPSpreadsheet Report Generator is ready for use in your project.
 
-## Usage
+
 
