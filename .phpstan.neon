@@ -1,0 +1,9 @@
+parameters:
+  level: 5
+  paths:
+    - src/
+  excludePaths:
+    - src/Migrations
+    - src/App/Migrations
+    - src/Doctrine/ORM/ServiceQueryObject.php
+  inferPrivatePropertyTypeFromConstructor: true
