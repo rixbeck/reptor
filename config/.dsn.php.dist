@@ -1,0 +1,5 @@
+<?php
+/**
+ * @author Rix Beck <rix@neologik.hu>
+ */
+return 'pdo:<pdo_dsn_prefix>://<username>:<password>@<host>:<port>/<database>';

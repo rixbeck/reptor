@@ -1,0 +1,12 @@
+
+/.env.local
+/.env.local.php
+/.env.*.local
+
+###> phpunit/phpunit ###
+/phpunit.xml
+.phpunit.result.cache
+###< phpunit/phpunit ###
+
+/bin/.*
+/config/.dsn.php
