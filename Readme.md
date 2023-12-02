@@ -18,6 +18,10 @@ The project was highly inspired by [alhimik1986](https://github.com/alhimik1986)
 4. **Template Language Extensibility**: The ability to extend the template language allows for more personalized and complex templates, accommodating a great degree of customization and functionality.
 5. **Aggregator Functions**: The ability to use aggregator functions like as `sum`, `avg`, etc. the generation of reports with a greater degree of complexity and functionality.
 6. **Group By**: The ability to group data by a specific column allows for the generation of reports that are more organized and structured.
+7. **Flexible parameter declaration**: Parameters or properties / like data sources, datasets, etc. - can be specified in the spreadsheet template itself or can be declared in runtime. This allows for greater flexibility and customization.
+8. **Native PHP functions or objects in cell formulas**: The ability to use native PHP functions or objects.
+9. **Excel formulas in cell expressions**: The ability to use Excel formulas in cell expressions and they can be combined with the Symfony Expression Language based extensions or native PHP functions.
+10. **User defined cell ranges as base units of processing**: Input data processing is controlled by interpreting the cell ranges as base units of processing.
 
 
 ![img-1.png](docs%2Fimg-1.png)
@@ -42,7 +46,7 @@ Reptor can be acquired and installed through a Git clone, followed by a Composer
     ```
 
 Make sure your PHP environment meets the requirements specified in the composer.json file, including enabled extensions like PDO, JSON, and SQLite3.
-After completing these steps, the PHPSpreadsheet Report Generator is ready for use in your project.
+After completing these steps, Reptor is ready for use in your project.
 
 
 
