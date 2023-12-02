@@ -16,8 +16,11 @@ The project was highly inspired by [alhimik1986](https://github.com/alhimik1986)
 2. **Symfony Expression Language**: Harness the power of Symfony’s component to provide a simplified manipulation of your object graph.
 3. **Data Sources or Datasets**: Include a multitude of data end points or vast datasets to generate reports that match your preferences and requirements.
 4. **Template Language Extensibility**: The ability to extend the template language allows for more personalized and complex templates, accommodating a great degree of customization and functionality.
+5. **Aggregator Functions**: The ability to use aggregator functions like as `sum`, `avg`, etc. the generation of reports with a greater degree of complexity and functionality.
+6. **Group By**: The ability to group data by a specific column allows for the generation of reports that are more organized and structured.
 
 
+![img-1.png](docs%2Fimg-1.png)
 
 ## Installation
 
