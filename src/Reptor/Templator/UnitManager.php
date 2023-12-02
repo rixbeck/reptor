@@ -314,6 +314,9 @@ class UnitManager extends \SplObjectStorage
                 ) as $cell
             ) {
                 $value = $cell->getValue();
+                if ($value === null) {
+                    continue;
+                }
                 $xfIndex = $cell->getXfIndex();
                 $coordinate = $cell->getCoordinate();
                 $this->noteCellVisited($coordinate);
