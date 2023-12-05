@@ -320,7 +320,7 @@ class UnitManager extends \SplObjectStorage
                 $xfIndex = $cell->getXfIndex();
                 $coordinate = $cell->getCoordinate();
                 $this->noteCellVisited($coordinate);
-                if ($value !== null || $xfIndex !== 0) {
+                if ($xfIndex !== 0) {
                     $smallestUnit = $this->findContainer($coordinate);
                     if ($smallestUnit !== $currentUnit) {
                         continue;
