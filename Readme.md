@@ -66,8 +66,56 @@ It is also possible to include Reptor in your PHP projects as a composer depende
 
 That's it! You have now successfully added Reptor as a dependency to your PHP project.
 
-# About concept
+Concept Behind Reptor: Templating vs. Scripting in Report Generation
+--------------------------------------------------------------------
 
-## Report Template
+When it comes to generating data-driven reports, there are fundamentally two approaches: scripting and templating.
+
+### Scripting
+
+Scripting involves writing custom code to handle data and format the report. It offers flexibility but requires extensive programming, making it complex and time-consuming for users without coding expertise.
+
+### Templating
+
+In contrast, templating, the approach chosen for Reptor, allows users to define report layouts and formatting directly within a familiar interface - an Excel file. This method is intuitive and user-friendly, significantly reducing the learning curve.
+
+#### Why Templating with Excel?
+
+1.  **Familiarity**: Excel is a widely-used tool with a familiar interface for many users, making it an ideal platform for designing report templates.
+2.  **Flexibility**: Excel's native functionalities (like cells, formulas, and formatting options) offer significant flexibility in defining how data should be presented.
+3.  **Efficiency**: By using Excel for templating, users can rapidly prototype and modify report designs without needing to delve into complex programming.
+4.  **Dynamic Reports**: With Excel, we can create dynamic templates that automatically adjust and populate with data, offering a powerful way to generate customized reports.
+
+Through Reptor, we bring the best of both worlds: the ease of templating through Excel and the power of PHP for processing and generating sophisticated reports.
+
+### Advanced Cell and Row Styling with Excel Templates
+
+One of the most significant advantages of using Excel templates in Reptor is the extensive styling capabilities it offers:
+
+1.  **Cell Styling**: Users can leverage Excel's rich cell formatting options to define the appearance of individual cells. This includes font styles, colors, borders, and background fills, allowing for highly customized reports that are visually appealing and easy to read.
+
+2.  **Row and Column Formatting**: Beyond single cells, Reptor allows for the styling of entire rows and columns. This feature is crucial for maintaining consistency and clarity in reports, especially when dealing with large datasets.
+
+3.  **Conditional Formatting**: Excel's conditional formatting can be used to dynamically style cells based on the data they contain. This brings an added layer of interactivity to your reports, enabling users to quickly identify trends, anomalies, or key metrics at a glance.
+
+4.  **Ease of Use**: By harnessing the familiar interface of Excel, users can style their reports without any additional learning curve, making it accessible to both technical and non-technical users.
+
+
+Through Reptor, these styling capabilities are seamlessly integrated into the report generation process, ensuring that the final output is not only informative but also aesthetically pleasing and tailored to specific presentation needs.
+
+### Utilizing Expression Language in Excel Cells
+
+Reptor harnesses the power of Symfony Expression Language to enhance the dynamism of Excel templates:
+
+1.  **Expression Language in Cells**: Users can embed expressions directly into Excel cells. These expressions, based on Symfony's robust framework, can manipulate and present data dynamically, adding significant functionality to your reports.
+
+2.  **Variable and Object Integration**: A variety of user-defined or predefined objects and variables can be used within these expressions. These can be defined directly in the Excel document's custom properties or via an initializing boot script.
+
+3.  **Adaptors and Data Sources**: Reptor supports various data sources through its adaptable interface, including PDO, Socket, Array, and more, as seen in the `Reptor/Adaptor/Datasource` namespace. This flexibility allows for the integration of diverse data sets.
+
+4.  **Uniform Connection Strings**: Data sources are connected using a uniform connection string, akin to Java or PHP DNS, simplifying the process of linking to and utilizing different datasets.
+
+
+Through these features, Reptor allows for extensive customization and dynamic data processing, enabling users to create highly sophisticated and tailored reports directly from Excel.
 
 
