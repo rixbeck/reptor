@@ -113,7 +113,7 @@ Reptor harnesses the power of Symfony Expression Language to enhance the dynamis
 
 3.  **Adaptors and Data Sources**: Reptor supports various data sources through its adaptable interface, including PDO, Socket, Array, and more, as seen in the `Reptor/Adaptor/Datasource` namespace. This flexibility allows for the integration of diverse data sets.
 
-4.  **Uniform Connection Strings**: Data sources are connected using a uniform connection string, akin to Java or PHP DNS, simplifying the process of linking to and utilizing different datasets.
+4.  **Uniform Connection Strings**: Data sources are connected using a uniform connection string, akin to Java or PHP DSN, simplifying the process of linking to and utilizing different datasets.
 
 
 Through these features, Reptor allows for extensive customization and dynamic data processing, enabling users to create highly sophisticated and tailored reports directly from Excel.
