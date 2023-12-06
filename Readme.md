@@ -48,5 +48,26 @@ Reptor can be acquired and installed through a Git clone, followed by a Composer
 Make sure your PHP environment meets the requirements specified in the composer.json file, including enabled extensions like PDO, JSON, and SQLite3.
 After completing these steps, Reptor is ready for use in your project.
 
+## Use as a Composer Dependency
+
+It is also possible to include Reptor in your PHP projects as a composer dependency rather than using it as a standalone project:
+
+1. Navigate to your existing PHP project directory and open Terminal (or a command prompt)
+
+    ```bash
+    cd /path/to/your/php/project
+    ```
+
+2. Use the following composer command to add Reptor as a dependency in your project.
+
+    ```bash
+    composer require rixbeck/reptor
+    ```
+
+That's it! You have now successfully added Reptor as a dependency to your PHP project.
+
+# About concept
+
+## Report Template
 
 
