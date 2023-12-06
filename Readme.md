@@ -109,7 +109,7 @@ Reptor harnesses the power of Symfony Expression Language to enhance the dynamis
 
 1.  **Expression Language in Cells**: Users can embed expressions directly into Excel cells. These expressions, based on Symfony's robust framework, can manipulate and present data dynamically, adding significant functionality to your reports.
 
-2.  **Variable and Object Integration**: A variety of user-defined or predefined objects and variables can be used within these expressions. These can be defined directly in the Excel document's custom properties or via an initializing boot script.
+2.  **Variable and Object Integration**: A variety of user-defined or predefined objects and variables can be used within these expressions. These can be defined directly in the Excel document's custom properties or via an initializing boot script or in any pre-processing phase of the report generation.
 
 3.  **Adaptors and Data Sources**: Reptor supports various data sources through its adaptable interface, including PDO, Socket, Array, and more, as seen in the `Reptor/Adaptor/Datasource` namespace. This flexibility allows for the integration of diverse data sets.
 
