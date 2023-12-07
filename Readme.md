@@ -24,7 +24,7 @@ The project was highly inspired by [alhimik1986](https://github.com/alhimik1986)
 10. **User defined cell ranges as base units of processing**: Input data processing is controlled by interpreting the cell ranges as base units of processing.
 
 
-![img-1.png](docs%2Fimg-1.png)
+![img-1.png](docs/img-1.png)
 
 ## Installation
 
@@ -117,5 +117,40 @@ Reptor harnesses the power of Symfony Expression Language to enhance the dynamis
 
 
 Through these features, Reptor allows for extensive customization and dynamic data processing, enabling users to create highly sophisticated and tailored reports directly from Excel.
+
+Philosophy of Rendering: The Concept of Excel-Based Templating
+--------------------------------------------------------------
+
+Reptor introduces a unique approach to processing Excel templates, centered around the concept of 'Units':
+
+1.  **Units - The Core of Templating**: In Reptor, 'Units' are the basic units of expressions that belong together, crucial for understanding how expressions within the same row of a dataset interact.
+
+2.  **Defining Units with Named Ranges**: Users define these 'Units' using named ranges in Excel. This method organizes the template and prepares it for processing.
+
+3.  **Sequential Processing and Evaluation**: The template processing involves sequentially evaluating these Units. During this phase, evaluated expressions transform into objects.
+
+4.  **Priority and Types of Units**: Each object has a type, and these types have inherent priorities. The priority of an object determines the type of its corresponding Unit in the evaluation process.
+
+5.  **Rendering Logic Driven by Unit Types**: Once Units are classified, the rendering logic takes over, driven by the type of each Unit. This step ensures that the final output aligns with the intended structure and format of the template.
+
+### Understanding Units in Excel Templates
+
+In the Reptor system, a 'Unit' encapsulates a collection of expressions that are logically related and processed together to produce a cohesive section of the report. 
+
+![img-2.png](docs/img-2.png)
+
+Here's how it works:
+
+*  **Binding Expressions**: As demonstrated in the provided figure, expressions are bound within named ranges in Excel, forming a 'Unit'. This ensures that data belonging to the same conceptual group is processed in unison.
+
+* **Named Ranges**: The use of named ranges such as `unit_partner_group` helps identify and process these Units efficiently, keeping the related expressions tied together.
+
+*   **Multiple Units Handling**: Users can define multiple Units within an Excel template, each representing a different section of the report or different data groupings.
+
+*   **Sequential Processing**: Reptor iterates through these Units sequentially for each record of data. The processing continues row by row, as long as there are remaining rows in any referred dataset.
+
+* **Expression Syntax**: The syntax `{{activity.GroupBy('partner')}}` within the cells is evaluated against the referred object provided to Reptor. This allows for dynamic content generation based on the data.
+
+
 
 
