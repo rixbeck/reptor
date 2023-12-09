@@ -152,7 +152,7 @@ Here's how it works:
 
 *   **Multiple Units Handling**: Users can define multiple Units within an Excel template, each representing a different section of the report or different data groupings.
 
-*   **Sequential Processing**: Reptor iterates through these Units sequentially for each record of data. The processing continues row by row, as long as there are remaining rows in any referred dataset.
+*   **Sequential Processing**: Reptor iterates through these Units sequentially and processes their cells until reaches last one. After that emits event with the instruction of dataset iterators can fetch the next data row (if has). So the processing continues row by row this way, as long as there are remaining referred dataset rows in any units.
 
 * **Expression Syntax**: The syntax `{{activity.GroupBy('partner')}}` within the cells is evaluated against the referred object provided to Reptor. This allows for dynamic content generation based on the data.
 
