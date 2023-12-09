@@ -1,4 +1,4 @@
-<p style="float: right">
+<p align="right">
   <img width="120" height="120" src="docs/reptor.svg" alt="logo">
 </p>
 
