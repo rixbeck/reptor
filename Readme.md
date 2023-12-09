@@ -1,4 +1,9 @@
+<p style="float: right">
+  <img width="120" height="120" src="docs/reptor.svg" alt="logo">
+</p>
+
 # Reptor
+
 ## PhpSpreadsheet based report generator
 
 
@@ -150,7 +155,5 @@ Here's how it works:
 *   **Sequential Processing**: Reptor iterates through these Units sequentially for each record of data. The processing continues row by row, as long as there are remaining rows in any referred dataset.
 
 * **Expression Syntax**: The syntax `{{activity.GroupBy('partner')}}` within the cells is evaluated against the referred object provided to Reptor. This allows for dynamic content generation based on the data.
-
-
 
 
