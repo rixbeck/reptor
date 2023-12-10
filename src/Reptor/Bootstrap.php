@@ -20,11 +20,9 @@ use brix\Reptor\ExpressionLanguage\Extension\PhpExtension;
 use brix\Reptor\ExpressionLanguage\Extension\SpreadsheetExtension;
 use brix\Reptor\ExpressionLanguage\Extension\UtilityExtension;
 use brix\Reptor\PhpOffice\SpreadsheetProvider;
-use brix\Reptor\Templator\CellMergeMap;
 use brix\Reptor\Templator\Context\CellRenderContext;
 use brix\Reptor\Templator\Context\ContextProvider;
 use brix\Reptor\Templator\ExprObject\Aggregator\AggregatorFactory;
-use brix\Reptor\Templator\MergeMapManager;
 use brix\Reptor\Templator\Templator;
 use brix\Reptor\Templator\UnitManager;
 use brix\Reptor\Templator\ViewController\ViewControllerFactory;
@@ -35,6 +33,7 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 class Bootstrap
 {
+    /** @var mixed[] */
     protected array $additionalProperties = [];
 
     public function __construct(
@@ -75,7 +74,7 @@ class Bootstrap
 
     protected function initialize(string $templateFile): void
     {
-        $contextProvider = new ContextProvider($cellRenderContext = new CellRenderContext());
+        $contextProvider = new ContextProvider(new CellRenderContext());
         $spreadsheetProvider = new SpreadsheetProvider();
         $spreadsheetProvider->loadFile($templateFile);
 
@@ -88,7 +87,7 @@ class Bootstrap
         if ($this->templator === null) {
             $unitManager = new UnitManager($this->eventDispatcher, []);
             $this->templator = new Templator(
-                 $spreadsheetProvider,
+                $spreadsheetProvider,
                 $this->eventDispatcher,
                 $this->expressionLanguage,
                 $contextProvider,

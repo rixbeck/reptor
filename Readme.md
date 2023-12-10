@@ -157,3 +157,51 @@ Here's how it works:
 * **Expression Syntax**: The syntax `{{activity.GroupBy('partner')}}` within the cells is evaluated against the referred object provided to Reptor. This allows for dynamic content generation based on the data.
 
 
+### Understanding Expression Language based Templating in Cells
+
+Reptor's templating system allows for sophisticated data manipulation directly within Excel cells using an expression language inspired by Symfony's. This system's flexibility stems from the ability to define properties, which are the base variables used within expressions for rendering.
+
+The `brix\Reptor\Bootstrap` class sets up the Reptor environment, including:
+
+1.  **Properties Initialization**: These are the variables available to all expressions in the templating system. They can be default properties or extended via the `addProperties` method.
+
+2.  **Expression Language Setup**: The class initializes the ExpressionLanguage component, registering various extensions that enhance its functionality, such as `CoreExtension`, `DataExtension`, and `UtilityExtension`.
+
+3.  **Data Source Integration**: Through the `DataExtension`, Reptor can connect to various data sources like databases, CSV, JSON, and arrays. It maps these data sources to readable objects for the templating engine.
+
+4.  **Template Processing**: The `Templator` object, once initialized, processes the Excel template, invoking the expressions and rendering the final output.
+
+5.  **Context Provisioning**: The `ContextProvider` manages the context within which cell rendering occurs, ensuring that the appropriate properties are available during the rendering process.
+
+6.  **Unit Management**: `UnitManager` helps manage named ranges, referred to as 'Units', which group related expressions for coherent processing.
+
+
+This initialization process is critical as it sets up the entire templating engine that powers the dynamic rendering of reports in Reptor, harnessing the power of the Symfony Expression Language to evaluate complex expressions within Excel cells.
+
+In addition to setting up the Reptor environment, the project includes a `bin/` directory, which houses scaffolding scripts to facilitate application initialization and configuration. This directory contains examples and boilerplate code that help users quickly set up their reporting projects:
+
+*   **Scaffolding Scripts**: These are pre-written scripts in the `bin/` folder that provide templates for common tasks, allowing users to scaffold their applications with ease.
+
+*   **Quick Start Examples**: New users can refer to these examples to understand how to bootstrap their Reptor application, configure data sources, and define properties.
+
+*   **Customization and Extensibility**: While the examples offer a quick way to get started, they are also designed to be easily customizable, providing a starting point for users to tailor the application to their specific reporting needs.
+
+
+This scaffolding approach aims to streamline the setup process, making it simple for users to jumpstart their report generation projects with Reptor.
+
+# About the status of the project
+
+The provided content serves as a brief introduction to the Reptor project and its underlying structure. It is intended as a quickstart guide for users to get a glimpse of the system's capabilities, particularly the expression language-based templating in Excel cells. Full documentation, including detailed explanations, examples, and best practices, is currently in development and will be organized into chapters for easy navigation and comprehension. This initial overview is designed to help new users begin working with Reptor and understand its core concepts.
+
+While the project is still in its early stages, it is fully functional and can be used to generate reports. The current version is `0.1.0-beta`, and the project is under active development. We welcome feedback, issue reports and contributions from the community to help improve the project and make it more accessible to users.
+
+## What's Next?
+
+We are currently working on the documentation mainly, and focusing on the following areas:
+
+1.  **Detailed Documentation**: We are working on a comprehensive documentation that will cover all aspects of the project, including detailed explanations, examples, and best practices.
+2. **Contribution Guidelines**: We are also working on a contribution guide to help users contribute to the project and make it more accessible to the community.
+3. **Release Schedule**: We are planning to release the first stable version of the project in the coming months.
+4. **Test automation**: We are working on a test automation framework to ensure the stability and reliability of the project. Any help in this area would be greatly appreciated.
+5. **Bug Fixes**: We are actively working on fixing bugs and issues reported by the community. Please feel free to report any issues you encounter.
+6. **Feature Requests**: We are also open to feature requests and suggestions from the community. Please feel free to share your ideas with us.
