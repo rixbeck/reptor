@@ -251,10 +251,12 @@ class UnitManager extends \SplObjectStorage
         foreach ($spreadsheet->getDefinedNames() as $definedName) {
             $name = $definedName->getName();
             if (str_starts_with($name, 'unit_')) {
-                $range = $definedName->getRange();
-                $range = Coordinate::convertRangeFormat($range);
-                $unit = new Unit($this->eventDispatcher,  $name, $range);
-                $this->attach($unit, []);
+                if ($definedName->getWorksheet()!==null) {
+                    $range = $definedName->getRange();
+                    $range = Coordinate::convertRangeFormat($range);
+                    $unit = new Unit($this->eventDispatcher, $name, $range);
+                    $this->attach($unit, []);
+                }
             }
         }
     }
