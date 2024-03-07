@@ -22,7 +22,7 @@ class Avg extends AbstractAggregator implements AvgInterface
         }
         $this->count += ((float)$subject > 0) ? 1 : 0;
         $this->sum += (float)$subject ?? 0;
-        $this->value = $this->sum / $this->count;
+        $this->value = ($this->count) ? $this->sum / $this->count : 0;
     }
 
     public function getType(): string
