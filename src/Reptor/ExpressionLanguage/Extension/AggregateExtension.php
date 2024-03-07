@@ -58,7 +58,7 @@ class AggregateExtension extends AbstractExtension
     private function avg(mixed $subject, ?GroupByInterface $groupBy)
     {
         $value = ($subject instanceof ExprObjectInterface) ? $subject->getValue() : $subject;
-        $avg = $this->aggregatorFactory->getInstance(Sum::class, $value, $groupBy);
+        $avg = $this->aggregatorFactory->getInstance(Avg::class, $value, $groupBy);
 
         return $avg;
     }
