@@ -20,7 +20,7 @@ class Avg extends AbstractAggregator implements AvgInterface
         if ($this->subject instanceof ExprObjectInterface) {
             $subject = $this->subject->getValue();
         }
-        ++$this->count;
+        $this->count += ((float)$subject > 0) ? 1 : 0;
         $this->sum += (float)$subject ?? 0;
         $this->value = $this->sum / $this->count;
     }
