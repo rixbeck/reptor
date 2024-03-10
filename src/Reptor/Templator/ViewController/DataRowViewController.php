@@ -95,14 +95,16 @@ class DataRowViewController extends AbstractViewController implements ViewContro
      */
     protected function nextRowEventHandler(NextRowEvent $event): void
     {
+        // @todo need more testing
+        $baseExprObject = $event->getCellRenderContext()->value->exprObject();
         $this->eventDispatcher->dispatch(
-            new NextDataRowEvent($event->getCellRenderContext(), $this->baseExprObject)
+            new NextDataRowEvent($event->getCellRenderContext(), $baseExprObject)
         );
 
-        if ($this->baseExprObject->isLast()) {
+        if ($baseExprObject->isLast()) {
             $this->eventDispatcher->removeListener(NextRowEvent::class, $this->nextRowHandler);
         }
-        $this->baseExprObject->next();
+        $baseExprObject->next();
     }
 
     public function nextDataRowEventHandler(Unit $unit, ...$args): void
