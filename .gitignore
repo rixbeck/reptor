@@ -11,3 +11,5 @@
 
 /bin/.*
 /config/.dsn.php
+.DS_Store
+vendor

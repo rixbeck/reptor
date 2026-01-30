@@ -83,9 +83,9 @@ class DataRowViewController extends AbstractViewController implements ViewContro
             $this->prepareAllocation(
                 $colLeft,
                 $colRight,
-                $cellRenderContext->cellAddress->rowId(),
+                $cellRenderContext->cellAddress->rowId() + $rowsAdded - 1,
                 $rowsAdded,
-                $rowsAdded,
+                true,
             );
         }
     }

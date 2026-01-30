@@ -39,6 +39,7 @@ class DataRow implements DataRowInterface
 
     public function __get(string $name): self
     {
+        $this->getViewController();
         $this->offsetGet($name);
 
         return clone $this;

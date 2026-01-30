@@ -52,7 +52,7 @@ class PrefetchIterator implements \Iterator, PrefetchIteratorInterface
 
     public function isLast(): bool
     {
-        return !$this->hasNext;
+        return $this->peek() === false;
     }
 
     public function key(): mixed
@@ -81,7 +81,16 @@ class PrefetchIterator implements \Iterator, PrefetchIteratorInterface
 
     public function peek(): mixed
     {
-        return $this->hasNext ? $this->iterator->current() : false;
+        if (!$this->iterator->valid()) {
+            return false;
+        }
+
+        $peek = $this->iterator->current();
+        if ($this->iterator instanceof \Generator && $peek === $this->endValue) {
+            return false;
+        }
+
+        return $peek;
     }
 
     public function rewind(): void
@@ -103,20 +112,22 @@ class PrefetchIterator implements \Iterator, PrefetchIteratorInterface
 
     private function advance(): void
     {
-        $this->hasNext = $this->iterator->valid();
-        if ($this->hasNext) {
-            $this->current = $this->iterator->current();
-            $this->key = $this->iterator->key();
-            $this->iterator->next();
-            if ($this->iterator->valid()) {
-                if ($this->iterator instanceof \Generator) {
-                    $this->hasNext = $this->iterator->current() !== $this->endValue;
-                }
-            } else {
-                $this->hasNext = false;
-            }
-        } else {
+        if (!$this->iterator->valid()) {
+            $this->hasNext = false;
             $this->current = null;
+            return;
         }
+
+        $this->current = $this->iterator->current();
+        $this->key = $this->iterator->key();
+        $this->iterator->next();
+
+        if ($this->iterator instanceof \Generator && $this->current === $this->endValue) {
+            $this->hasNext = false;
+            $this->current = null;
+            return;
+        }
+
+        $this->hasNext = true;
     }
 }

@@ -188,6 +188,10 @@ abstract class AbstractViewController implements ViewControllerInterface
     ): void {
         $bottom = $bottom ?: $this->worksheet->getHighestRow();
 
+        if ($row > $bottom) {
+            return;
+        }
+
 /*        $cellRange = $this->mergeManager->getCellMergeMap()->getCellRange(
             $this->worksheet->getCell($col.$row)
         );*/
